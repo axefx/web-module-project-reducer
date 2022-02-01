@@ -5,6 +5,7 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 import reducer, { initialState } from '../reducers';
+import { addOne } from '../actions';
 
 function App() {
   // use useReducer to access state and dispatch
@@ -33,7 +34,7 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1}/>
+              <CalcButton value={1} onClick={e=>dispatch(addOne())} />
               <CalcButton value={2}/>
               <CalcButton value={3}/>
             </div>
