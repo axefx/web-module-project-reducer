@@ -5,12 +5,13 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 import reducer, { initialState } from '../reducers';
-import { addOne } from '../actions';
+import { applyNumber } from '../actions';
 
 function App() {
   // use useReducer to access state and dispatch
   const [state, dispatch] = useReducer(reducer, initialState)
-
+  // handles click events as integers for each buttons value
+  const onNumberClick = (e) => dispatch(applyNumber(parseInt(e.target.value)))
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -34,21 +35,21 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={1} onClick={e=>dispatch(addOne())} />
-              <CalcButton value={2}/>
-              <CalcButton value={3}/>
+              <CalcButton value={1} onClick={onNumberClick} />
+              <CalcButton value={2} onClick={onNumberClick}/>
+              <CalcButton value={3} onClick={onNumberClick}/>
             </div>
 
             <div className="row">
-              <CalcButton value={4}/>
-              <CalcButton value={5}/>
-              <CalcButton value={6}/>
+              <CalcButton value={4} onClick={onNumberClick}/>
+              <CalcButton value={5} onClick={onNumberClick}/>
+              <CalcButton value={6} onClick={onNumberClick}/>
             </div>
 
             <div className="row">
-              <CalcButton value={7}/>
-              <CalcButton value={8}/>
-              <CalcButton value={9}/>
+              <CalcButton value={7} onClick={onNumberClick}/>
+              <CalcButton value={8} onClick={onNumberClick}/>
+              <CalcButton value={9} onClick={onNumberClick}/>
             </div>
 
             <div className="row">
