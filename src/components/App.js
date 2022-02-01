@@ -5,13 +5,15 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 import reducer, { initialState } from '../reducers';
-import { applyNumber } from '../actions';
+import { applyNumber, updateOperator } from '../actions';
 
 function App() {
   // use useReducer to access state and dispatch
   const [state, dispatch] = useReducer(reducer, initialState)
   // handles click events as integers for each buttons value
   const onNumberClick = (e) => dispatch(applyNumber(parseInt(e.target.value)))
+  // uses each buttons value to update the operator in state
+  const handleOperator = (e) => dispatch(updateOperator(e.target.value))
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
@@ -53,9 +55,9 @@ function App() {
             </div>
 
             <div className="row">
-              <CalcButton value={"+"}/>
-              <CalcButton value={"*"}/>
-              <CalcButton value={"-"}/>
+              <CalcButton value={"+"} onClick={handleOperator}/>
+              <CalcButton value={"*"} onClick={handleOperator}/>
+              <CalcButton value={"-"} onClick={handleOperator}/>
             </div>
 
             <div className="row ce_button">
