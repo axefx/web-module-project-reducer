@@ -5,7 +5,7 @@ import './App.css';
 import TotalDisplay from './TotalDisplay';
 import CalcButton from './CalcButton';
 import reducer, { initialState } from '../reducers';
-import { applyNumber, updateOperator } from '../actions';
+import { applyNumber, updateOperator, clearTotal } from '../actions';
 
 function App() {
   // use useReducer to access state and dispatch
@@ -61,7 +61,7 @@ function App() {
             </div>
 
             <div className="row ce_button">
-              <CalcButton value={"CE"}/>
+              <CalcButton value={"CE"} onClick={(e) => dispatch(clearTotal())}/>
             </div>
 
           </form>
