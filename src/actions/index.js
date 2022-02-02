@@ -7,6 +7,8 @@ export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 
 export const MEMORY_SAVE = "MEMORY_SAVE";
 
+export const MEMORY_REQ = "MEMORY_REQ";
+
 export const addOne = () => {
     return({type:ADD_ONE});
 }
@@ -25,4 +27,8 @@ export const clearTotal = () => {
 
 export const saveMemory = () => {
     return({type:MEMORY_SAVE});
+}
+
+export const requestMemory = () => {
+    return({type: MEMORY_REQ})
 }
