@@ -9,6 +9,8 @@ export const MEMORY_SAVE = "MEMORY_SAVE";
 
 export const MEMORY_REQ = "MEMORY_REQ";
 
+export const MEMORY_CLEAR = "MEMORY_CLEAR"
+
 export const addOne = () => {
     return({type:ADD_ONE});
 }
@@ -31,4 +33,8 @@ export const saveMemory = () => {
 
 export const requestMemory = () => {
     return({type: MEMORY_REQ})
+}
+
+export const clearMemory = () => {
+    return({type: MEMORY_CLEAR});
 }
